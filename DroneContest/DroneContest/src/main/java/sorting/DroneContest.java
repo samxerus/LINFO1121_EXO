@@ -84,7 +84,40 @@ public class DroneContest {
      */
     public static LinkedList<HeightChange> findHighest(Drone[] participants) {
         // TODO
-         return null;
+        List<Timestamp> timestamps = new ArrayList<>();
+        PriorityQueue<Integer> heights = new PriorityQueue<>(Comparator.reverseOrder());
+        LinkedList<HeightChange> changes = new LinkedList<>();
+
+
+        for (Drone part: participants){
+            timestamps.add(new Timestamp(part.height,"start",part.start));
+            timestamps.add(new Timestamp(part.height, "end", part.end));
+        }
+
+        timestamps.sort(null);
+
+        heights.add(0);
+
+        changes.add(new HeightChange(0,0));
+
+        for(Timestamp time : timestamps){
+            if(Objects.equals(time.period, "start")){
+                if (time.height > heights.peek()){
+                    changes.add(new HeightChange(time.time, time.height));
+                }
+                heights.add(time.height);
+                continue;
+            }
+            if(Objects.equals(time.period, "end")){
+                int curheigth = heights.peek();
+                heights.remove(time.height);
+                int newheigth = heights.peek();
+                if(curheigth != newheigth){
+                    changes.add(new HeightChange(time.time, newheigth));
+                }
+            }
+        }
+        return changes;
     }
 
 
@@ -112,4 +145,37 @@ class Drone {
         start = s; end = e; height = h;
     }
 
+
 }
+
+class Timestamp implements Comparable<Timestamp> {
+    public final int height;
+    public final String period;
+    public final int time;
+
+    public Timestamp(int height, String period, int time) {
+        this.height = height;
+        this.period = period;
+        this.time = time;
+    }
+
+    @Override
+    public int compareTo(Timestamp other) {
+        if (this.time != other.time) {
+            return Integer.compare(this.time, other.time);
+        }
+
+        if (!this.period.equals(other.period)) {
+            return this.period.equals("end") ? 1 : -1;
+        }
+
+
+        if (this.period.equals("start")) {
+            return Integer.compare(other.height, this.height);
+        } else {
+            return Integer.compare(this.height, other.height);
+
+        }
+    }
+}
+
