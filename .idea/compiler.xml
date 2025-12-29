@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="algoex (1)" />
         <module name="algoex" />
+        <module name="algoex (2)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
