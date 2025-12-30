@@ -6,9 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="algoex (4)" />
         <module name="algoex (1)" />
         <module name="algoex" />
         <module name="algoex (2)" />
+      </profile>
+      <profile name="Annotation profile for algoex" enabled="true">
+        <sourceOutputDir name="../../RabinKarp/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../RabinKarp/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="algoex (3)" />
       </profile>
     </annotationProcessing>
