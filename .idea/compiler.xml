@@ -8,21 +8,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="algoex (4)" />
         <module name="algoex (6)" />
+        <module name="algoex (7)" />
         <module name="algoex (1)" />
         <module name="algoex" />
         <module name="algoex (2)" />
-      </profile>
-      <profile name="Annotation profile for algoex" enabled="true">
-        <sourceOutputDir name="../../RabinKarp/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../RabinKarp/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="algoex (3)" />
       </profile>
       <profile name="Annotation profile for algoex (5)" enabled="true">
         <sourceOutputDir name="../DroneContest/DroneContest/target/generated-sources/annotations" />
         <sourceTestOutputDir name="../DroneContest/DroneContest/target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="algoex (5)" />
+      </profile>
+      <profile name="Annotation profile for algoex" enabled="true">
+        <sourceOutputDir name="../../RabinKarp/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../RabinKarp/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="algoex (3)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
